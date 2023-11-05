@@ -1,0 +1,31 @@
+import random
+
+# List of colors
+colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple']
+
+def color_guessing_game():
+    # Select a random color
+    secret_color = random.choice(colors)
+    
+    print("Welcome to the Color Guessing Game!")
+    print("Try to guess the secret color!")
+
+    while True:
+        guess = input("Enter your guess (or 'exit' to end the game): ").lower()
+
+        if guess == 'exit':
+            print(f"The secret color was {secret_color}. Thanks for playing!")
+            break
+
+        if guess not in colors:
+            print("Not a valid color! Please enter a color from the given list.")
+            continue
+
+        if guess == secret_color:
+            print("Congratulations! You guessed the correct color.")
+            break
+        else:
+            print("Wrong guess! Try again.")
+
+# Start the game
+color_guessing_game()
